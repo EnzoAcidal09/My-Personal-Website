@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Kurt's Isle — A Playable Portfolio</title>
+  <meta name="description" content="Kurt Lawrence V. Ladica's portfolio, rebuilt as a tiny explorable pixel island. Built with Three.js, procedural pixel art, and chiptune audio." />
+  <meta name="theme-color" content="#1a1c2c" />
+  <meta property="og:title" content="Kurt's Isle — A Playable Portfolio" />
+  <meta property="og:description" content="Walk around my portfolio. Four landmarks, one golden duck, zero texture packs." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="./assets/fonts/PressStart2P-Regular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./assets/fonts/VT323-Regular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="is-title">
+  <canvas id="scene" aria-label="An explorable 3D pixel island portfolio"></canvas>
+  <div class="fx-layer" aria-hidden="true"></div>
+
+  <div id="ui-root" class="ui-root">
+    <header id="hud" class="hud">
+      <button id="journal" class="journal" type="button" aria-label="Open the Isle Journal">
+        <span class="journal__label">ISLE JOURNAL</span>
+        <span id="journal-pips" class="pips" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span id="journal-count" class="journal__count">0/4</span>
+      </button>
+      <div class="hud__actions">
+        <button id="btn-sound" class="icon-btn" type="button" aria-pressed="true" aria-label="Toggle sound">SND ON</button>
+        <button id="btn-help" class="icon-btn icon-btn--help" type="button" aria-label="Open help">?</button>
+      </div>
+    </header>
+
+    <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+
+    <div id="prompt" class="prompt" hidden>
+      <button id="prompt-btn" class="prompt__btn" type="button">
+        <span id="prompt-key" class="keycap">E</span>
+        <span id="prompt-label">INTERACT</span>
+      </button>
+    </div>
+
+    <div id="touch" class="touch" hidden>
+      <div id="joystick" class="joystick" aria-label="Virtual joystick">
+        <span class="joystick__cross" aria-hidden="true"></span>
+        <div id="joystick-knob" class="joystick__knob"></div>
+      </div>
+      <button id="touch-action" class="touch-action" type="button" aria-label="Interact">E</button>
+    </div>
+
+    <div class="hint-bar" id="hint-bar" aria-hidden="true">
+      <span>WASD / ARROWS MOVE</span><span>SHIFT RUN</span><span>E INTERACT</span><span>M SOUND</span><span>H HELP</span>
+    </div>
+  </div>
+
+  <div id="dialog-root" class="dialog-root" hidden></div>
+
+  <div id="title" class="title">
+    <div class="title__stars" aria-hidden="true"></div>
+    <div class="title__inner">
+      <p class="title__eyebrow">A PLAYABLE PORTFOLIO</p>
+      <h1 class="title__logo"><span>KURT'S</span><span class="accent">ISLE</span></h1>
+      <p class="title__tagline">A pocket-sized pixel world. Walk around, poke at things.</p>
+
+      <div class="title__card">
+        <p class="title__name">KURT LAWRENCE V. LADICA</p>
+        <p class="title__role">STUDENT · CREATIVE DEVELOPER</p>
+      </div>
+
+      <button id="btn-start" class="btn btn--big" type="button">PRESS START</button>
+      <p class="title__hint">WASD / ARROWS TO MOVE · E TO INTERACT</p>
+      <p class="title__note">Four landmarks. One journal. One suspicious duck.</p>
+    </div>
+    <div class="title__footer">MADE WITH THREE.JS · EVERY PIXEL GENERATED IN CODE</div>
+  </div>
+
+  <div id="complete" class="complete" hidden>
+    <div class="complete__frame">
+      <p class="complete__kicker">JOURNAL COMPLETE</p>
+      <p class="complete__title">ISLE<br />EXPLORED!</p>
+      <p class="complete__note">Thanks for wandering around. The contact mailbox is open.</p>
+    </div>
+  </div>
+
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+
+  <noscript>
+    <div class="noscript">This portfolio is a little 3D game, so it needs JavaScript enabled.</div>
+  </noscript>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Static files are served directly, no build step.
+# This keeps the repo clean and the deploy fast.
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
+.vscode/
+*.log
