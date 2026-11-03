@@ -72,11 +72,13 @@ Other easy tweaks:
 
 ## Deploy to GitHub Pages
 
-This repository is already set up for GitHub Pages via Actions:
+**Live site:** <https://enzoacidal09.github.io/My-Personal-Website/>
+
+The repository is already set up for GitHub Pages via Actions:
 
 1. Push to `main`.
-2. In the repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
-3. The workflow in `.github/workflows/deploy.yml` publishes the static site on every push.
+2. The workflow in `.github/workflows/deploy.yml` publishes the static site automatically.
+3. Pages is set to **Source: GitHub Actions**; the workflow also attempts to enable it if it is ever turned off.
 
 The site is plain HTML/CSS/JS, so any static host works too (Netlify, Cloudflare Pages, Vercel, Neocities…).
 
